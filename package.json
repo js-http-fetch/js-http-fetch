@@ -1,0 +1,58 @@
+{
+  "name": "js-http-fetch",
+  "version": "1.0.1",
+  "private": false,
+  "description": "fetch-based http request plugin",
+  "main": "lib/js-http-fetch.umd.js",
+  "module": "lib/js-http-fetch.esm.js",
+  "unpkg": "lib/js-http-fetch.min.js",
+  "typings": "types/index.d.ts",
+  "keywords": [
+    "http",
+    "fetch",
+    "request"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "eric",
+    "email": "zwq1872757047@gmail.com"
+  },
+  "scripts": {
+    "serve": "webpack-dev-server --config ./webpack.config.dev.js",
+    "test": "webpack-dev-server --config ./webpack.config.test.js",
+    "build:test": "webpack --config ./webpack.config.test.js",
+    "build": "npm run clean && npm run build:esm && npm run build:umd && npm run build:umd.min",
+    "build:esm": "rollup  --config build/rollup.esm.config.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js",
+    "build:umd.min": "rollup --config build/rollup.umd.min.config.js",
+    "clean": "rimraf ./lib && rimraf ./types"
+  },
+  "bundledDependencies": false,
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime-corejs2": "^7.16.7",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-replace": "^3.1.0",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "html-webpack-plugin": "^4.5.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "~4.1.5",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-http-fetch/js-http-fetch"
+  }
+}
