@@ -23,7 +23,7 @@ export default function request(config: HttpFetchConfig) {
       config.body = JSON.stringify(data)
       if (!config.headers) config.headers = {'Content-Type': ContentType.json}
       else if (type(config.headers) === 'Object') { // Record<string, string>
-        if (!config.headers['Content-Type']) config.headers['Content-Type'] = ContentType.json
+        if (!(config.headers as Record<string, string>)['Content-Type']) (config.headers as Record<string, string>)['Content-Type'] = ContentType.json
       } else if (config.headers instanceof Headers) {
         if (!config.headers.has('Content-Type')) config.headers.set('Content-Type', ContentType.json)
       } else if (Array.isArray(config.headers)) { // string[][]

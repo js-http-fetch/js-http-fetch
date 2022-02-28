@@ -69,7 +69,7 @@ export interface HttpFetchConfig extends RequestInit {
   method?: HttpFetchHttpMethod
   controller?: AbortController
   responseType?: HttpFetchResponseType
-  headers?: HeadersInit & { 'Content-Type'?: ContentType.json | ContentType.formData | ContentType.urlencoded | ContentType.text }
+  headers?: HeadersInit | { 'Content-Type': ContentType.json | ContentType.formData | ContentType.urlencoded | ContentType.text }
   onDownloadProgress?: (progress: Progress) => void
 }
 
