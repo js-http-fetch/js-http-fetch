@@ -49,7 +49,7 @@ Fetch.create = function (config: HttpFetchConfig = {}): HttpFetchInstance {
   Object.keys(this).forEach(k => {
     if (k === 'create') return
     const v = this[k];
-    (fetchInstance[k] as typeof v) = v
+    (fetchInstance[k] as typeof v) = deepClone(v)
   })
   Object.keys(this.config).forEach(k => k in config ? 0 : config[k] = deepClone(this.config[k]))
   fetchInstance.config = config as HttpFetchConfig
