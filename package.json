@@ -1,6 +1,6 @@
 {
   "name": "js-http-fetch",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "fetch-based http request plugin",
   "main": "lib/js-http-fetch.umd.js",

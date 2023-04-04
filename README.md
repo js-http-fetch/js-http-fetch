@@ -1,6 +1,6 @@
 # js-http-fetch
 
-## Fetch-based http request plugin, just fetch, no ajax.
+## Fetch-based http request plugin, just fetch, no XMLHttpRequest.
 
 ## Install
 
